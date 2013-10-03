@@ -22,8 +22,8 @@ using namespace std;
 void detectAndDisplay( Mat frameIn, Ptr<CLAHE> calhe);
 
 /** Global variables */
-String face_cascade_name = "/Users/apple/Downloads/opencv-2.4.6/data/haarcascades/haarcascade_frontalface_alt.xml";
-String eyes_cascade_name = "/Users/apple/Downloads/opencv-2.4.6/data/haarcascades/haarcascade_eye_tree_eyeglasses.xml";
+String face_cascade_name = "haarcascade_frontalface_alt.xml";
+String eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
 CascadeClassifier face_cascade;
 CascadeClassifier eyes_cascade;
 string window_name = "Capture - Face detection";
@@ -380,6 +380,7 @@ int main(int argc, const char * argv[])
     //cout << "Label is:"<< label << endl;
     string fn_csv = "/Users/apple/Downloads/fisher_faces/faces.txt";
     string output_folder = "/Users/apple/Downloads/fisher_faces/outputs";
+    std::cout << getenv("PWD");
     //engineFace(fn_csv, output_folder, true);
     //string res = changePostfix("Tiange.pgm", "pgm", "png");
     //cout << "replaced:" << res << endl;

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18279FDA17DEEE140059D518 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18279FD917DEEE140059D518 /* main.cpp */; };
-		18279FDC17DEEE140059D518 /* OpenCVSrc.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 18279FDB17DEEE140059D518 /* OpenCVSrc.1 */; };
 		1827A16C17DF0FFE0059D518 /* libopencv_objdetect.2.4.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1827A16517DF0FFD0059D518 /* libopencv_objdetect.2.4.6.dylib */; };
 		1827A16D17DF0FFE0059D518 /* libopencv_photo.2.4.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1827A16617DF0FFD0059D518 /* libopencv_photo.2.4.6.dylib */; };
 		1827A16E17DF0FFE0059D518 /* libopencv_contrib.2.4.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1827A16717DF0FFD0059D518 /* libopencv_contrib.2.4.6.dylib */; };
@@ -16,6 +15,8 @@
 		1827A17117DF0FFE0059D518 /* libopencv_ml.2.4.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1827A16A17DF0FFD0059D518 /* libopencv_ml.2.4.6.dylib */; };
 		1827A17217DF0FFE0059D518 /* libopencv_core.2.4.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1827A16B17DF0FFE0059D518 /* libopencv_core.2.4.6.dylib */; };
 		1827A1BF17DF30290059D518 /* libopencv_imgproc.2.4.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1827A1BE17DF30290059D518 /* libopencv_imgproc.2.4.6.dylib */; };
+		B3EF405617FD418B00484659 /* haarcascade_eye_tree_eyeglasses.xml in Copy Files */ = {isa = PBXBuildFile; fileRef = 1827A1A317DF22100059D518 /* haarcascade_eye_tree_eyeglasses.xml */; };
+		B3EF405717FD418B00484659 /* haarcascade_frontalface_alt.xml in Copy Files */ = {isa = PBXBuildFile; fileRef = 1827A1A217DF21EC0059D518 /* haarcascade_frontalface_alt.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,22 +72,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		18279FD417DEEE130059D518 /* CopyFiles */ = {
+		18279FD417DEEE130059D518 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
-				18279FDC17DEEE140059D518 /* OpenCVSrc.1 in CopyFiles */,
+				B3EF405617FD418B00484659 /* haarcascade_eye_tree_eyeglasses.xml in Copy Files */,
+				B3EF405717FD418B00484659 /* haarcascade_frontalface_alt.xml in Copy Files */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		18279FD617DEEE140059D518 /* OpenCVSrc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenCVSrc; sourceTree = BUILT_PRODUCTS_DIR; };
 		18279FD917DEEE140059D518 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		18279FDB17DEEE140059D518 /* OpenCVSrc.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = OpenCVSrc.1; sourceTree = "<group>"; };
 		1827A0E117DEEF440059D518 /* core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = core.xcodeproj; path = "../../Downloads/opencv-2.4.6/modules/core/core.xcodeproj"; sourceTree = "<group>"; };
 		1827A0F917DEEF900059D518 /* contrib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = contrib.xcodeproj; path = "../../Downloads/opencv-2.4.6/modules/contrib/contrib.xcodeproj"; sourceTree = "<group>"; };
 		1827A11117DEEFBD0059D518 /* objdetect.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = objdetect.xcodeproj; path = "../../Downloads/opencv-2.4.6/modules/objdetect/objdetect.xcodeproj"; sourceTree = "<group>"; };
@@ -149,7 +151,6 @@
 				1827A1A317DF22100059D518 /* haarcascade_eye_tree_eyeglasses.xml */,
 				1827A1A217DF21EC0059D518 /* haarcascade_frontalface_alt.xml */,
 				18279FD917DEEE140059D518 /* main.cpp */,
-				18279FDB17DEEE140059D518 /* OpenCVSrc.1 */,
 			);
 			path = OpenCVSrc;
 			sourceTree = "<group>";
@@ -254,7 +255,7 @@
 			buildPhases = (
 				18279FD217DEEE130059D518 /* Sources */,
 				18279FD317DEEE130059D518 /* Frameworks */,
-				18279FD417DEEE130059D518 /* CopyFiles */,
+				18279FD417DEEE130059D518 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -445,6 +446,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../MyOpenCV\"",
+					"/usr/local/lib/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -458,6 +460,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../MyOpenCV\"",
+					"/usr/local/lib/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -482,6 +485,7 @@
 				18279FE117DEEE140059D518 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
