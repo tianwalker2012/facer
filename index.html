@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Facer : A face detection based on OpenCV" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Facer</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/tianwalker2012/facer">View on GitHub</a>
+
+          <h1 id="project_title">Facer</h1>
+          <h2 id="project_tagline">A face detection based on OpenCV</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/tianwalker2012/facer/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/tianwalker2012/facer/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="face-recognition-project" class="anchor" href="#face-recognition-project"><span class="octicon octicon-link"></span></a>Face Recognition Project</h3>
+
+<p>The purpose is to come up with a better Face Recognition algorithm</p>
+
+<h3>
+<a name="already-accomplished" class="anchor" href="#already-accomplished"><span class="octicon octicon-link"></span></a>Already accomplished.</h3>
+
+<ol>
+<li>How to detect face from the photo by using the cascaded face detector.</li>
+<li>How to improve the face detection rate(Rotate the photo, used adaptive equalizer)</li>
+<li>Use fisher face algorithm to extract the feature from the image. </li>
+</ol><h3>
+<a name="next-mile-stone" class="anchor" href="#next-mile-stone"><span class="octicon octicon-link"></span></a>Next Mile stone</h3>
+
+<ol>
+<li>
+<p>Come up with following command tools:
+a. Face extractor can extract the face from the photo.
+Following is the command line command.</p>
+
+<p>extractor -i input.jpg -o /output_folder/result.jpg
+Returned text will have
+Why not use the definition of the face plus directly, seems like the right thing to do. </p>
+</li>
+</ol><div class="highlight highlight-javascript"><pre>  <span class="p">[{</span>
+    <span class="nx">rotate</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="c1">//degree</span>
+     <span class="nx">x</span><span class="o">:</span><span class="mf">0.4</span><span class="p">,</span>
+     <span class="nx">y</span><span class="o">:</span><span class="mf">0.1</span><span class="p">,</span>
+     <span class="nx">width</span><span class="o">:</span><span class="mf">0.02</span><span class="p">,</span>
+     <span class="nx">height</span><span class="o">:</span><span class="mf">0.04</span>
+<span class="p">},</span> <span class="p">{</span>
+     <span class="nx">rotate</span><span class="o">:</span><span class="mi">20</span><span class="p">,</span><span class="c1">//degree</span>
+     <span class="nx">x</span><span class="o">:</span><span class="mf">0.4</span><span class="p">,</span>
+     <span class="nx">y</span><span class="o">:</span><span class="mf">0.1</span><span class="p">,</span>
+     <span class="nx">width</span><span class="o">:</span><span class="mf">0.02</span><span class="p">,</span>
+     <span class="nx">height</span><span class="o">:</span><span class="mf">0.04</span>
+<span class="p">}]</span>
+</pre></div>
+
+<p>Will tell at which rotate angle this face get detected. </p>
+
+<pre><code>train -i source.csv -o train.dat
+</code></pre>
+
+<p>will train the current data,  the output file will keep the trained data. </p>
+
+<pre><code>search -i trained.dat -s head.jpg
+</code></pre>
+
+<p>Will search the result against the head.jpg files. 
+What's assumption we make for the head.jpg?
+It is already a extracted head file and normalized. </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Facer maintained by <a href="https://github.com/tianwalker2012">tianwalker2012</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
