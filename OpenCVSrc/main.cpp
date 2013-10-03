@@ -22,8 +22,9 @@ using namespace std;
 void detectAndDisplay( Mat frameIn, Ptr<CLAHE> calhe);
 
 /** Global variables */
-String face_cascade_name = "haarcascade_frontalface_alt.xml";
-String eyes_cascade_name = "haarcascade_eye_tree_eyeglasses.xml";
+//String face_cascade_name = "haarcascade_frontalface_alt.xml";
+String face_cascade_name = "/Users/apple/Downloads/opencv-2.4.6/data/haarcascades/haarcascade_frontalface_alt_tree.xml";
+String eyes_cascade_name = "/Users/apple/Downloads/opencv-2.4.6/data/haarcascades/haarcascade_eye_tree_eyeglasses.xml";
 CascadeClassifier face_cascade;
 CascadeClassifier eyes_cascade;
 string window_name = "Capture - Face detection";
@@ -381,15 +382,15 @@ int main(int argc, const char * argv[])
     string fn_csv = "/Users/apple/Downloads/fisher_faces/faces.txt";
     string output_folder = "/Users/apple/Downloads/fisher_faces/outputs";
     std::cout << getenv("PWD");
-    //engineFace(fn_csv, output_folder, true);
+    engineFace(fn_csv, output_folder, true);
     //string res = changePostfix("Tiange.pgm", "pgm", "png");
     //cout << "replaced:" << res << endl;
-    //Ptr<FaceRecognizer> model = trainModel(fn_csv, output_folder, true);
-    //for(int i = 1; i < 41; i++){
-    //    string fileName = format("/Users/apple/Downloads/fisher_faces/s%i/7.pgm", i);
-    //    predict(model, fileName);
-    //}
-    startCapture();
+    Ptr<FaceRecognizer> model = trainModel(fn_csv, output_folder, true);
+    for(int i = 1; i < 41; i++){
+        string fileName = format("/Users/apple/Downloads/fisher_faces/s%i/7.pgm", i);
+        predict(model, fileName);
+    }
+    //startCapture();
 }
 
 
@@ -418,7 +419,7 @@ int startCapture()
             else
             { printf(" --(!) No captured frame -- Break!"); break; }
             
-            int c = waitKey(20000);
+            int c = waitKey(20);
             if( (char)c == 'c' ) {
                 printf("Capture next");
             }
@@ -453,11 +454,12 @@ void detectAndDisplay( Mat frameIn, Ptr<CLAHE> calhe)
     calhe->apply(frame_gray, frame_gray);
     equalizeHist(frame_old, frame_old);
     Mat frame = frameIn;
-    Mat screenFrame = frame_old;
+    Mat screenFrame = frame_gray;
     //-- Detect faces
     
     face_cascade.detectMultiScale( frame_old, oldFaces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
-    for(int angleCount = 1; angleCount < 12; angleCount ++){
+    int angleCount = 1;
+    //for(; angleCount < 12; angleCount ++){
     
         face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
        
@@ -490,8 +492,9 @@ void detectAndDisplay( Mat frameIn, Ptr<CLAHE> calhe)
             }
         }
         if(faces.size() > 0){
-            break;
-        }
+            //break;
+        }else{
+        /**
         double curAngle = angleCount * 30.0;
         cout << format("Will rotate to angle %f, see what's going on\n", curAngle);
         Mat frameTemp;
@@ -499,9 +502,11 @@ void detectAndDisplay( Mat frameIn, Ptr<CLAHE> calhe)
         cvtColor(frameTemp, frame_gray, CV_BGR2GRAY);
         calhe->apply(frame_gray, frame_gray);
         screenFrame = frame_gray;
+         **/
+        }
        // cvtColor(frame, frame_gray, CV_BGR2GRAY );
        // equalizeHist( frame_gray, frame_gray );
-    }
+    //}
     //-- Show what you got
     imshow( window_name, screenFrame);
 }
